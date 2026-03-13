@@ -1,0 +1,55 @@
+configuration:
+  device_path:
+    name: Chemin du périphérique
+    description: Chemin vers votre modem GSM (par exemple /dev/ttyUSB0)
+  pin:
+    name: Code PIN SIM
+    description: Code PIN de la carte SIM (laisser vide si aucun PIN requis)
+  ssl:
+    name: Activer SSL
+    description: Activer HTTPS pour des connexions sécurisées (nécessite des certificats SSL)
+  username:
+    name: Nom d'utilisateur
+    description: Nom d'utilisateur pour l'authentification API
+  password:
+    name: Mot de passe
+    description: Mot de passe pour l'authentification API
+  mqtt_enabled:
+    name: Activer MQTT
+    description: Publier les SMS et l'état du périphérique sur le broker MQTT
+  mqtt_host:
+    name: Hôte MQTT
+    description: Nom d'hôte du broker MQTT (utilisez 'core-mosquitto' pour le broker HA intégré)
+  mqtt_port:
+    name: Port MQTT
+    description: Port du broker MQTT (généralement 1883)
+  mqtt_username:
+    name: Nom d'utilisateur MQTT
+    description: Nom d'utilisateur pour l'authentification MQTT (laisser vide si non requis)
+  mqtt_password:
+    name: Mot de passe MQTT
+    description: Mot de passe pour l'authentification MQTT (laisser vide si non requis)
+  mqtt_topic_prefix:
+    name: Préfixe de topic MQTT
+    description: Préfixe de topic MQTT pour les messages publiés
+  sms_monitoring_enabled:
+    name: Activer la surveillance SMS
+    description: Détecter et publier automatiquement les SMS entrants sur MQTT (contrôle callback et polling)
+  sms_check_interval:
+    name: Intervalle de vérification SMS
+    description: Intervalle de polling de secours pour SMS (secondes, 30-300). L'addon préfère le callback temps réel, le polling sert de secours en cas d'échec ou d'incompatibilité.
+  sms_cost_per_message:
+    name: Coût par SMS
+    description: Coût par SMS envoyé. Définir à 0 pour désactiver le suivi des coûts.
+  sms_cost_currency:
+    name: Devise
+    description: Devise pour l'affichage des coûts SMS (par exemple EUR, USD, CZK)
+  auto_delete_read_sms:
+    name: Supprimer automatiquement les SMS lus
+    description: Supprimer automatiquement les SMS de la carte SIM après lecture (libère de l'espace SIM)
+  missed_calls_monitoring_enabled:
+    name: Activer la surveillance des appels
+    description: Détection d'appels en temps réel via callbacks Gammu - détecte les appels entrants et manqués (fonctionne avec SIM800L et la plupart des modems)
+  incoming_call_auto_reset_seconds:
+    name: Timeout de réinitialisation automatique des appels
+    description: Réinitialiser automatiquement l'état d'appel entrant après ce délai (solution de secours pour les modems qui n'envoient pas d'événements de fin d'appel). Le minuteur redémarre à chaque événement RING. Définir entre 10-300 secondes.
