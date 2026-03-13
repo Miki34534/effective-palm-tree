@@ -1,4 +1,3 @@
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: xyyaks Home Assistant add-on repository
-url: 'https://github.com/Miki34534/effective-palm-tree'
-maintainer: zxc
+name: My SMS Addons
+url: https://github.com/Miki34534/effective-palm-tree
+maintainer: Miki
