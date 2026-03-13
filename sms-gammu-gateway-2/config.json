@@ -1,7 +1,7 @@
 {
   "name": "SMS Gammu Gateway 2",
   "version": "1.6.2",
-  "slug": "sms_gammu_gateway 2",
+  "slug": "sms_gammu_gateway_2",
   "description": "SMS Gammu Gateway instance 2",  "startup": "services",
   "arch": ["amd64", "i386", "aarch64", "armv7", "armhf"],
   "boot": "auto",
